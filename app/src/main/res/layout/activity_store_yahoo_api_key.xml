@@ -26,8 +26,7 @@
         android:ems="10"
         android:hint="Yahoo API key einfügen"
         android:inputType="text"
-        android:minHeight="48dp"
-        android:text="Name" />
+        android:minHeight="48dp"/>
 
     <Button
         android:id="@+id/btnSaveYahooApiKey"
