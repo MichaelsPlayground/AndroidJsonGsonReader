@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="Android JSON with GSON reader"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnReadWriteSimpleJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="read + write simple JSON" />
+
+    <Button
+        android:id="@+id/btnReadYahooApiJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="read Yahoo API JSON" />
+
+    <Button
+        android:id="@+id/btnReadYahooDynamicJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="read Yahoo dynamic JSON" />
+
+    <Button
+        android:id="@+id/btnReadDynamicJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="read dynamic JSON" />
+
+    <Button
+        android:id="@+id/btnGenerateSimpleJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="generate simple JSON" />
+
+    <Button
+        android:id="@+id/btnGrabJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="Grab JSON" />
+
+    <Button
+        android:id="@+id/btnGrabYahooJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="Grab Yahoo JSON" />
+
+    <Button
+        android:id="@+id/btnYahooApi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="Yahoo Api" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <Button
+            android:id="@+id/btnStoreYahooApiKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="store API key" />
+
+        <Button
+            android:id="@+id/btnLoadYahooApiKey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="load API key" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvSimpleJson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="simple JSON" />
+
+</LinearLayout>
