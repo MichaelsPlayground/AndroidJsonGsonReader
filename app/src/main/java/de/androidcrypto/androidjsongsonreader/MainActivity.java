@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     String jsonString = "{\"XDEW.DE\":{\"timestamp\":[1646985600,1647621384],\"symbol\":\"XDEW.DE\",\"previousClose\":null,\"chartPreviousClose\":72.13,\"end\":null,\"start\":null,\"close\":[72.13,73.67],\"dataGranularity\":300}}";
     String jsonStringMo = "{\"XDEW.DE\":{\"timestamp\":[1645171200,1645430400,1645516800,1645603200,1645689600,1645776000,1646035200,1646121600,1646208000,1646294400,1646380800,1646640000,1646726400,1646812800,1646899200,1646985600,1647621384],\"symbol\":\"XDEW.DE\",\"chartPreviousClose\":70.83,\"close\":[70.83,70.33,70.49,69.91,69.15,71.4,71.94,71.33,72.54,72.76,72.67,72.8,71.34,71.5,70.94,72.13,73.67],\"dataGranularity\":300,\"previousClose\":null,\"end\":null,\"start\":null}}";
+    String jsonStringMo2Symbols = "{\"XDWD.DE\":{\"symbol\":\"XDWD.DE\",\"timestamp\":[1645171200,1645430400,1645516800,1645603200,1645689600,1645776000,1646035200,1646121600,1646208000,1646294400,1646380800,1646640000,1646726400,1646812800,1646899200,1646985600,1647621379],\"close\":[79.792,78.874,79.034,78.56,77.532,80.018,80.554,79.944,80.86,80.574,79.796,79.464,77.958,78.966,78.268,79.24,82.242],\"end\":null,\"start\":null,\"dataGranularity\":300,\"previousClose\":null,\"chartPreviousClose\":79.792},\"XDEW.DE\":{\"symbol\":\"XDEW.DE\",\"timestamp\":[1645171200,1645430400,1645516800,1645603200,1645689600,1645776000,1646035200,1646121600,1646208000,1646294400,1646380800,1646640000,1646726400,1646812800,1646899200,1646985600,1647621384],\"close\":[70.83,70.33,70.49,69.91,69.15,71.4,71.94,71.33,72.54,72.76,72.67,72.8,71.34,71.5,70.94,72.13,73.67],\"end\":null,\"start\":null,\"dataGranularity\":300,\"previousClose\":null,\"chartPreviousClose\":70.83}}";
 
     List<PriceList> csvList = new ArrayList<>();
     String[] csvHeaderPrices = {"timestamp", "close"};
@@ -116,7 +117,10 @@ public class MainActivity extends AppCompatActivity {
                 Type listType = new TypeToken<Map<String, Object>>() {
                 }.getType();
                 Gson gson = new Gson();
-                Map<String, Object> myList = gson.fromJson(jsonStringMo, listType);
+                // 1 symbol
+                //Map<String, Object> myList = gson.fromJson(jsonStringMo, listType);
+                // 2 symbols
+                Map<String, Object> myList = gson.fromJson(jsonStringMo2Symbols, listType);
 
                 // first element is dynamic = Yahoo symbol name, e.g. XDEW.DE
                 for (Map.Entry<String, Object> m : myList.entrySet()) {
@@ -179,7 +183,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("*** grab JSON ***");
-
+                // ist in der lage ein yahoo json mit mehreren symbols einzulesen
+                // aktuell werden alle werte hintereinander in die csvList geschrieben
+                // wichtig zur nutzung: separate dateien für jedes symbol
                 Type listType = new TypeToken<Map<String, Object>>() {
                 }.getType();
                 Gson gson = new Gson();
@@ -234,8 +240,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("read dynamic JSON");
-                String jsonString = "{\"XDEW.DE\":{\"timestamp\":[1646985600,1647621384],\"symbol\":\"XDEW.DE\",\"previousClose\":null,\"chartPreviousClose\":72.13,\"end\":null,\"start\":null,\"close\":[72.13,73.67],\"dataGranularity\":300}}";
-
+                //String jsonString = "{\"XDEW.DE\":{\"timestamp\":[1646985600,1647621384],\"symbol\":\"XDEW.DE\",\"previousClose\":null,\"chartPreviousClose\":72.13,\"end\":null,\"start\":null,\"close\":[72.13,73.67],\"dataGranularity\":300}}";
+                String jsonString = jsonStringMo2Symbols; //
                 Type listType = new TypeToken<Map<String, Object>>() {
                 }.getType();
                 Gson gson = new Gson();

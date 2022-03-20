@@ -231,7 +231,15 @@ public class YahooFinanceApiRequestV02 {
 
         //URL urlName = new URL("https://data.lemon.markets/v1/instruments/?isin=IE00BJ0KDQ92&mic=XMUN");
         //URL urlName = new URL("https://yfapi.net/v8/finance/spark?interval=1d&range=6mo&symbols=%20XDEW.DE");
-        URL urlName = new URL("https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=%20XDEW.DE");
+
+        // Xtrackers S&P 500 Equal Weight UCITS ETF IE00BLNMYC90 XDEW.DE
+        // Xtrackers msci world IE00BJ0KDQ92 XDWD.DE
+
+        // 1 symbol
+        //URL urlName = new URL("https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=%20XDEW.DE");
+        // 2 symbols
+        URL urlName = new URL("https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=XDEW.DE%2CXDWD.DE");
+
         //URL urlName = new URL("https://yfapi.net/v8/finance/spark?interval=1d&range=5y&symbols=%20XDEW.DE");
 
         // 2 stocks mit comma separated
